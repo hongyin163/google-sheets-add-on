@@ -14,7 +14,7 @@ class GoogleService {
         return this;
     }
     getSelectedLineValues() {
-        const result = '[[["Tech","[Tech][FE][Assistance] Sort out  business flow and system architecture ","请问","滴滴","Developing","","","SPML-15420","PM","Hongyin Li","","","","","","","Tech","","","","","","","","",""]]]';       
+        const result = '[[["Tech","[Tech]Sort out  business flow and system architecture ","请问","滴滴","Developing","","","15420","PM","","","","","","","","Tech","","","","","","","","",""]]]';       
         this.successCallback(result);
     }
     importSubtaskGroupsByJson(params) {

@@ -14,7 +14,7 @@ class GoogleService {
         return this;
     }
     getSelectedLineValues() {
-        const result = '[[["","[Tech] Censoring 数据导出优化","2022-06-05T16:00:00.000Z","2022-06-08T16:00:00.000Z","Reviewing","","","SPML-13617","PM","Chaopeng Guo","","","Need FE & QA","","","","","","","","","","","","",""]]]';
+        const result = '[[["","[Tech] Censoring 数据导出优化","2022-06-05T16:00:00.000Z","2022-06-08T16:00:00.000Z","Reviewing","","","13617","PM","","","","Need FE & QA","","","","","","","","","","","","",""]]]';
         this.successCallback(result);
     }
     addToMyTaskList() {
