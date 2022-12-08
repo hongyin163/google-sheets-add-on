@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+interface localhost
+
+package "Task Assistant Server App" {
+'  interface HTTP as "localhost"
+  [Server by KOA] - localhost
+}
+
+cloud "Google Sheets" {
+  artifact f as "Project Management Sheet File"
+  frame "Google add-on" {
+    [UI] -up-> [Google Apps Script]
+    [UI] --> localhost
+  }
+  f <- [Google Apps Script]
+}
+
+interface jAPI as "JIRA API"
+cloud JIRA as "JIRA"
+jAPI - JIRA
+[Server by KOA] --> jAPI
+
+@enduml

@@ -1,0 +1,42 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor User
+participant "Google sheet" as gs
+participant "Google App Scripts" as gas
+participant Proxy as px
+participant Jira
+
+activate gs
+activate px
+User -> gs: Select lines of tasks update\n and run "Update task from jira" addon
+gs -> gas: Run GAS
+activate gas
+gas -> px: Check proxy
+gas <-- px: Response
+gs <- gas: Get the column number for task-key
+gs --> gas: Response which column task-key in
+gs <- gas: Get line ranges selected by User
+gs --> gas: Response selected ranges
+gs <- gas: Request all task-keys in the whole column
+gs --> gas: Response task-keys array
+gas -> gas: Pick task-keys that in the line ranges selected by User
+gas -> px: Request task data by the task-keys
+activate Jira
+px -> Jira: Request task data by the task-keys
+px <-- Jira: Response the task data
+deactivate Jira
+px --> User: Show the task list UI with task data
+User -> px: Select task(s) that want to update
+gas <- px: Update task(s) user selected
+gas -> gas: Find line numbers beyond the task(s)
+gs <- gas: Update status in the corresponding line(s) and column
+User <- gs: Show the results
+deactivate gas
+deactivate px
+deactivate gs
+
+
+@enduml

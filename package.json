@@ -1,0 +1,156 @@
+{
+  "name": "task-assistant",
+  "version": "1.5.17",
+  "description": "",
+  "main": "main.js",
+  "bin": {
+    "jira": "./proxy/bin/index.js"
+  },
+  "files": [
+    "proxy",
+    "static"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"webpack serve --config webpack.dev.config.js --name ",
+    "build": "node ./script/build-prod.mjs",
+    "build:complete-task": "webpack --config webpack.prod.config.js --name complete-task",
+    "start:complete-task": "webpack serve --config webpack.dev.config.js --name complete-task",
+    "build:complete-epic": "webpack --config webpack.prod.config.js --name complete-epic",
+    "start:complete-epic": "webpack serve --config webpack.dev.config.js --name complete-epic",
+    "build:update-task-from-jira": "webpack --config webpack.prod.config.js --name update-task-from-jira",
+    "start:update-task-from-jira": "webpack serve --config webpack.dev.config.js --name update-task-from-jira",
+    "build:import-task-from-jira": "webpack --config webpack.prod.config.js --name import-task-from-jira",
+    "start:import-task-from-jira": "webpack serve --config webpack.dev.config.js --name import-task-from-jira",
+    "build:update-task-to-jira": "webpack --config webpack.prod.config.js --name update-task-to-jira",
+    "start:update-task-to-jira": "webpack serve --config webpack.dev.config.js --name update-task-to-jira",
+    "build:create-task-from-epic": "webpack --config webpack.prod.config.js --name create-task-from-epic",
+    "start:create-task-from-epic": "webpack serve --config webpack.dev.config.js --name create-task-from-epic",
+    "build:update-taskscore-to-jira": "webpack --config webpack.prod.config.js --name update-taskScore-to-jira",
+    "start:update-taskscore-to-jira": "webpack serve --config webpack.dev.config.js --name update-taskScore-to-jira",
+    "build:import-taskscore-from-jira": "webpack --config webpack.prod.config.js --name import-taskscore-from-jira",
+    "start:import-taskscore-from-jira": "webpack serve --config webpack.dev.config.js --name import-taskscore-from-jira",
+    "build:generate-weekly-report": "webpack --config webpack.prod.config.js --name generate-weekly-report",
+    "start:generate-weekly-report": "webpack serve --config webpack.dev.config.js --name generate-weekly-report",
+    "build:update-bug-info-from-jira": "webpack --config webpack.prod.config.js --name update-bug-info-from-jira",
+    "start:update-bug-info-from-jira": "webpack serve --config webpack.dev.config.js --name update-bug-info-from-jira",
+    "build:add-task-to-tasks": "webpack --config webpack.prod.config.js --name add-task-to-tasks",
+    "start:add-task-to-tasks": "webpack serve --config webpack.dev.config.js --name add-task-to-tasks",
+    "start:filter-by-labels":"npm run dev filter-by-labels",
+    "build:setting": "webpack --config webpack.prod.config.js --name setting",
+    "start:setting": "webpack serve --config webpack.dev.config.js --name setting",
+    "build:about": "webpack --config webpack.prod.config.js --name about",
+    "start:about": "webpack serve --config webpack.dev.config.js --name about",
+    "build:jira": "webpack --config webpack.jira.config.js",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "buildAll": "yarn build:update-task-from-jira && yarn build:import-task-from-jira && yarn build:update-task-to-jira && yarn build:create-task-from-epic && yarn build:setting && yarn build:about && yarn build:update-taskscore-to-jira && yarn build:update-bug-info-from-jira",
+    "gs:login": "clasp login",
+    "gs:pull": "clasp pull",
+    "gs:push": "clasp push",
+    "gs:deploy": "clasp deploy",
+    "deploy": "yarn build && yarn gs:push",
+    "holiday": "node script/getHolidy.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "gitlab@git.garena.com:hongyin.li/task-assistant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@koa/cors": "^3.1.0",
+    "@koa/router": "^10.1.1",
+    "@mui/icons-material": "^5.2.5",
+    "@mui/lab": "^5.0.0-alpha.61",
+    "@mui/material": "^5.2.5",
+    "commander": "^8.3.0",
+    "date-fns": "2.28.0",
+    "default-user-agent": "^1.0.0",
+    "ejs": "^3.1.8",
+    "electron-squirrel-startup": "^1.0.0",
+    "firebase": "^9.9.1",
+    "jira.js": "^2.8.0",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-logger": "^3.2.1",
+    "koa-proxies": "^0.12.1",
+    "koa-static": "^5.0.0",
+    "material-ui-popup-state": "^2.0.0",
+    "minimist": "^1.2.5",
+    "moment": "^2.29.1",
+    "node-fetch": "2",
+    "ora": "^6.0.1",
+    "os-browserify": "^0.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/plugin-transform-runtime": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.5",
+    "@babel/preset-typescript": "^7.16.5",
+    "@electron-forge/cli": "^6.0.0-beta.61",
+    "@electron-forge/maker-deb": "^6.0.0-beta.61",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.61",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
+    "@electron-forge/maker-zip": "^6.0.0-beta.61",
+    "@google/clasp": "^2.4.1",
+    "@types/ejs": "^3.1.1",
+    "@types/google.script.client-side": "^0.1.1",
+    "@types/oauth": "^0.9.1",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "babel-loader": "^8.2.3",
+    "babel-runtime": "^6.26.0",
+    "css-loader": "^6.5.1",
+    "electron": "^16.0.5",
+    "filemanager-webpack-plugin": "^7.0.0-alpha.0",
+    "html-inline-script-webpack-plugin": "^2.0.3",
+    "html-webpack-plugin": "^5.5.0",
+    "less-loader": "^10.2.0",
+    "minimist": "^1.2.5",
+    "postcss-loader": "^6.2.1",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.4",
+    "webpack": "^5.65.0",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "./static/_share/img/icon.icns"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "task_assistant"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}

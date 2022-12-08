@@ -1,0 +1,30 @@
+<!--index.html-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <title>Task Assistant Server</title>
+  </head>
+  <body>
+    <section class="main">
+      <h1>Task Assistant Server</h1>
+      <div id="server-status"></div>
+    </section>
+    <div class="footer">
+      Using Node.js <span id="node-version"></span>, Chromium
+      <span id="chrome-version"></span>, and Electron
+      <span id="electron-version"></span>
+    </div>
+  </body>
+</html>

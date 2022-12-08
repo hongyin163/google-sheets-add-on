@@ -1,0 +1,8 @@
+.main {
+  min-height: calc(100vh - 100px); /* 这个200px是header和footer的高度 */
+}
+h1,
+.footer {
+  height: 50px;
+  line-height: 50px;
+}

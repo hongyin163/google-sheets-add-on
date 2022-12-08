@@ -1,0 +1,122 @@
+.jira-issue-status-lozenge {
+    background: #42526e;
+    border: 0 solid #42526e;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+    padding: 2px 5px 3px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: text-bottom;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 12em;
+    word-wrap: normal;
+    word-break: normal
+}
+
+.jira-issue-status-render-error {
+    color: #de350b
+}
+
+.jira-issue-status-lozenge-medium-gray, .jira-issue-status-lozenge-blue-gray, .jira-issue-status-lozenge-default {
+    background-color: #42526e;
+    border-color: #42526e;
+    color: #fff
+}
+
+.jira-issue-status-lozenge-green, .jira-issue-status-lozenge-success {
+    background-color: #00875a;
+    border-color: #00875a;
+    color: #fff
+}
+
+.jira-issue-status-lozenge-warm-red, .jira-issue-status-lozenge-removed {
+    background-color: #de350b;
+    border-color: #de350b;
+    color: #fff
+}
+
+.jira-issue-status-lozenge-yellow, .jira-issue-status-lozenge-inprogress {
+    background-color: #0052cc;
+    border-color: #0052cc;
+    color: #fff
+}
+
+.jira-issue-status-lozenge-brown, .jira-issue-status-lozenge-moved {
+    background-color: #ff991f;
+    border-color: #ff991f;
+    color: #172b4d
+}
+
+.jira-issue-status-lozenge-empty {
+    background-color: #fff;
+    border-color: #fff;
+    color: #dfe1e5
+}
+
+.aui-lozenge-subtle.jira-issue-status-lozenge-medium-gray, .aui-lozenge-subtle.jira-issue-status-lozenge-blue-gray, .aui-lozenge-subtle.jira-issue-status-lozenge-default {
+    background-color: #dfe1e5;
+    border-color: #dfe1e5;
+    color: #42526e
+}
+
+.aui-lozenge-subtle.jira-issue-status-lozenge-green, .aui-lozenge-subtle.jira-issue-status-lozenge-success {
+    background-color: #e3fcef;
+    border-color: #e3fcef;
+    color: #064
+}
+
+.aui-lozenge-subtle.jira-issue-status-lozenge-warm-red, .aui-lozenge-subtle.jira-issue-status-lozenge-removed {
+    background-color: #ffebe5;
+    border-color: #ffebe5;
+    color: #bf2600
+}
+
+.aui-lozenge-subtle.jira-issue-status-lozenge-yellow, .aui-lozenge-subtle.jira-issue-status-lozenge-inprogress {
+    background-color: #deebff;
+    border-color: #deebff;
+    color: #0747a6
+}
+
+.aui-lozenge-subtle.jira-issue-status-lozenge-brown, .aui-lozenge-subtle.jira-issue-status-lozenge-moved {
+    background-color: #fff0b2;
+    border-color: #fff0b2;
+    color: #172b4d
+}
+
+.jira-issue-status-lozenge-compact {
+    width: 4px;
+    text-align: left;
+    text-indent: -9999px
+}
+
+.jira-issue-status-tooltip .tipsy-inner {
+    text-align: left
+}
+
+.jira-issue-status-tooltip .jira-issue-status-tooltip-title {
+    text-transform: uppercase
+}
+
+.jira-issue-status-tooltip .jira-issue-status-tooltip-desc {
+    color: #ccc
+}
+
+.jira-issue-status-lozenge-max-width-short {
+    max-width: 8em
+}
+
+.jira-issue-status-lozenge-max-width-medium {
+    max-width: 12em
+}
+
+.jira-issue-status-lozenge-max-width-long {
+    max-width: 20em
+}
